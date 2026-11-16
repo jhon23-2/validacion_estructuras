@@ -1,0 +1,144 @@
+╔═══════════════════════════════════════════════════════════════╗
+║     SISTEMA PARQUE TAYRONA - INSTRUCCIONES RÁPIDAS           ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📦 REPOSITORIO:
+   https://github.com/jhon23-2/validacion_estructuras
+
+🚀 EJECUTAR EL PROGRAMA (3 opciones):
+
+   OPCIÓN 1 - Usar scripts (Windows):
+   ────────────────────────────────────
+   1. Doble clic en: compilar.bat
+   2. Doble clic en: ejecutar.bat
+
+   OPCIÓN 2 - Línea de comandos (Git Bash):
+   ─────────────────────────────────────────
+   cd C:\Users\jhonattan.almanza\Documents\validacion_estructuras
+   javac -encoding UTF-8 -d bin -sourcepath src src/app/Main.java
+   java -cp bin app.Main
+
+   OPCIÓN 3 - Todo en una línea:
+   ──────────────────────────────
+   javac -encoding UTF-8 -d bin -sourcepath src src/app/Main.java && java -cp bin app.Main
+
+
+📋 ESTRUCTURA DEL MENÚ:
+
+   GESTIÓN DE VISITANTES (RF2):
+   1.  Registrar visitante
+   2.  Buscar visitante
+   3.  Eliminar visitante
+   4.  Listar visitantes (AVL)
+
+   COLAS Y TURNOS (RF3, RF4):
+   5.  Ingresar grupo a portería
+   6.  Atender grupo en portería
+   7.  Asignar guía
+
+   HISTORIAL Y DESHACER (RF5, RF6):
+   8.  Consultar historial de visitante
+   9.  Deshacer última operación
+
+   ALGORITMOS SOBRE GRAFOS (RF7, RF8):
+   10. Calcular ruta más corta (A*)
+   11. Puntos alcanzables (BFS)
+   12. Verificar conectividad (DFS)
+
+   0.  Salir
+
+
+🧪 CASOS DE PRUEBA SUGERIDOS:
+
+   CASO 1: Probar A* (Ruta más corta)
+   ───────────────────────────────────
+   Opción 10
+   Origen: El Zaino
+   Destino: Cabo San Juan
+
+   Resultado esperado:
+   Ruta: El Zaino → Cañaveral → Arrecifes → La Arenilla → La Piscina → Cabo San Juan
+   Costo: ~5150 metros
+
+   CASO 2: Llenar cola de portería
+   ────────────────────────────────
+   1. Opción 5 (ingresar grupo) x 25 veces
+   2. Opción 5 vez 26 → debe fallar (cola llena)
+   3. Opción 6 (atender) → libera un espacio
+   4. Opción 5 → ahora sí puede ingresar
+
+   CASO 3: Verificar sendero crítico (DFS)
+   ────────────────────────────────────────
+   Opción 12
+   Desde: Cañaveral
+   Hasta: Arrecifes
+
+   Resultado esperado: RED DESCONECTADA ⚠️
+
+   CASO 4: BFS - Alcance en saltos
+   ────────────────────────────────
+   Opción 11
+   Origen: El Zaino
+   Saltos: 2
+
+   Resultado: Muestra puntos a 0, 1 y 2 saltos
+
+   CASO 5: Deshacer operaciones
+   ─────────────────────────────
+   1. Opción 1 (registrar visitante) x 3
+   2. Opción 9 (deshacer) x 3
+   3. Opción 4 (listar) → los visitantes no deben aparecer
+
+
+📊 DATOS CARGADOS AL INICIO:
+
+   ✓ 30 visitantes ficticios
+   ✓ 10 puntos del parque (El Zaino, Cañaveral, etc.)
+   ✓ 15 senderos con longitudes reales
+   ✓ 5 guías locales en rotación
+
+
+📖 DOCUMENTACIÓN COMPLETA:
+
+   docs/PROBLEMA.md   - Contexto y requisitos
+   docs/SOLUCION.md   - Arquitectura e implementación
+   docs/USO.md        - Guía detallada de uso
+   README.md          - Información del proyecto
+
+
+🔧 ESTRUCTURAS IMPLEMENTADAS:
+
+   E1  ListaDoble       → Historial de visitas
+   E2  Pila             → Deshacer, DFS, reconstrucción rutas
+   E3a ColaArreglo      → Cola de portería (cap. 25)
+   E3b ColaCircular     → Turno rotativo de guías
+   E4  ArbolAVL         → Índice de visitantes
+   E5  MatrizDispersa   → Pesos de senderos
+   E6  Grafo            → Red de senderos (BFS, DFS, A*)
+
+
+⚠️  NOTAS IMPORTANTES:
+
+   • Esta es la versión 1.0 (prototipo con colecciones Java)
+   • La versión 2.0 implementará estructuras desde cero
+   • Todos los datos son ficticios (Ley 1581/2012)
+   • El programa maneja errores sin cerrarse
+
+
+🎯 REQUISITOS FUNCIONALES IMPLEMENTADOS:
+
+   ✅ RF1: Carga de datos desde CSV
+   ✅ RF2: Gestión de visitantes (AVL)
+   ✅ RF3: Cola de portería
+   ✅ RF4: Turno de guías
+   ✅ RF5: Historial navegable
+   ✅ RF6: Deshacer operaciones
+   ✅ RF7: Ruta más corta (A*)
+   ✅ RF8: Análisis de conectividad (BFS/DFS)
+
+
+═══════════════════════════════════════════════════════════════
+Autor: Jhonattan Almanza
+Curso: 706132 - Estructuras de Datos
+Fecha: 2026-11-16
+═══════════════════════════════════════════════════════════════
